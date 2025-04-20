@@ -57,8 +57,9 @@ http://localhost:3000
 ## 👩‍💻 Autor
 
 **Emanuelle Oliveira**  
-Estudante do curso de Desenvolvimento de Software Multiplataforma – FATEC São José dos Campos  
-Scrum Master e Desenvolvedora Backend com foco em modelagem e arquitetura de dados
+
+Estudante do curso de Desenvolvimento de Software Multiplataforma – FATEC  
+PO | Scrum Master | Desenvolvedora Backend com foco em modelagem e arquitetura de dados
 
 ---
 
