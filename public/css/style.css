@@ -1,0 +1,529 @@
+/* Estilo Geral do Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(13, 13, 13, 0.969);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: justify;
+    font-size: 1.2rem;
+    overflow-x: hidden;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10; /* Assegura que o menu fique acima do conteúdo */
+}
+
+/* Estilo do menu lateral */
+.sidebar-menu .menu {
+    display: flex;                    /* transforma a lista em coluna */
+    flex-direction: column;          /* itens ficam um abaixo do outro */
+    justify-content: space-evenly;   /* distribui os itens igualmente na altura */
+    height: 100%;                    /* ocupa toda a altura da sidebar */
+    width: 100%;                     /* ocupa toda a largura disponível */
+    gap: 0.01rem;                     /* espaço entre os itens */
+    text-align: center;              /* centraliza o texto */
+    font-size: 1.3rem;               /* aumenta o tamanho da fonte */
+    font-weight: 500;               /* deixa a fonte mais "forte" */
+}
+
+/* Estilos gerais para os links do menu */
+.sidebar-menu .menu a,
+.sidebar-menu .menu a:focus,
+.sidebar-menu .menu a:hover {
+    color: #e0e0e0;                         /* cor padrão dos textos */
+    text-decoration: none;                 /* remove o sublinhado */
+    padding: 1rem 0;                       /* espaço interno nos links */
+    width: 100%;                           /* ocupa largura total do menu */
+    position: relative;                    /* permite usar ::before posicionado */
+    transition: color 0.3s ease, transform 0.3s ease; /* suaviza animações */
+}
+
+/* Quando o mouse passar por cima */
+.sidebar-menu .menu a:hover {
+    color: #ff4d4d;                        /* muda a cor do texto */
+    transform: translateX(3px);            /* move o texto levemente para a direita */
+}
+
+/* Barra decorativa animada abaixo do link */
+.sidebar-menu .menu a::before {
+    content: "";                           /* cria um elemento visual vazio */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ff4d4d;
+    transition: width 0.3s ease, left 0.3s ease; /* animação suave */
+}
+
+/* Quando passar o mouse, a barra cresce */
+.sidebar-menu .menu a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+
+.content-container {
+    max-width: 100%; /* Garante que o contêiner ocupe a largura total da tela */
+    box-sizing: border-box; /* Inclui o padding dentro da largura */
+}
+
+
+/* Seções */
+.content-container {
+    max-width: 100%; /* Garante que o contêiner ocupe a largura total */
+    width: 100%; /* Expande o contêiner para toda a largura disponível */
+    margin: 0 auto;
+    padding: 0 1rem; /* Mantém algum espaçamento lateral */
+    text-align: justify;
+    line-height: 1.8;
+    letter-spacing: 0.6px;
+}
+
+
+/* Estilo para os títulos principais das seções */
+.section-title {
+    color: #ff4d4d;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+/* Ajuste para o conteúdo das seções */
+.section {
+    padding: 2rem 0; /* Ajusta o espaçamento superior e inferior das seções */
+    color: #e0e0e0;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+/* Logos de tecnologia */
+.tech-icons img {
+    width: 50px; /* Ajuste para o tamanho desejado */
+    height: 50px; /* Ajuste para o tamanho desejado */
+    object-fit: contain; /* Mantém a proporção original da imagem */
+    margin: 5px; /* Espaçamento entre as imagens */
+}
+
+/* Títulos das Seções */
+.section h2 {
+    color: #ff4d4d;
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    
+}
+
+.foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('foto-me.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin-right: 2rem; /* Aumenta o espaço entre a imagem e o texto */
+    pointer-events: none;
+    user-select: none;
+    
+    /* Borda dupla com efeito entrelaçado */
+    box-shadow: 
+        0 0 0 5px #261111, /* Primeiro círculo de cor clara */
+        0 0 0 10px #580000; /* Segundo círculo de cor vermelha */
+}
+/* Centralizar a imagem verticalmente com o texto */
+#sobre-mim .content {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente a imagem e o texto */
+    gap: 2rem; /* Espaço entre imagem e texto */
+}
+/* Ajuste para alinhar o primeiro título com os demais */
+#sobre-mim h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 0;
+    color: #ff4d4d; /* Ajuste a cor para corresponder ao estilo */
+}
+
+/* Estilo para centralizar o conteúdo da seção "Sobre Mim" */
+#sobre-mim .content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: justify;
+}
+
+
+.tech-icons-inline {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribui os ícones uniformemente ao longo da linha */
+}
+
+.tech-icons-inline img {
+    width: calc(100% / 13 - 5px); /* Divide o espaço uniformemente considerando 13 ícones e gap */
+    height: auto;
+}
+
+
+/* Ajuste de layout para Hard e Soft Skills */
+#habilidades .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+#habilidades .content > div {
+    flex: 1 1 45%; /* Cada coluna ocupa aproximadamente metade da largura */
+    min-width: 300px;
+}
+
+/* Estilo mais limpo para a coluna de Soft Skills */
+#habilidades .content > div:last-child ul {
+    padding-left: 2rem;
+    /* list-style-type: "✅ ";*/   /* Adiciona um ícone visual */
+  }
+  
+  #habilidades .content > div:last-child li {
+    margin-bottom: 1rem; /* Mais espaço entre os itens */
+    text-align: left; /* Alinha os textos para facilitar a leitura */
+    line-height: 1.6;
+  }
+/* Estilo para a seção de destaque (Sobre Mim) */
+.section.destaque {
+    max-width: 1000px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza */
+    padding: 2rem;
+    color: #e0e0e0;
+    width: 100%; /* Faz a seção ocupar toda a largura disponível */
+    box-sizing: border-box; /* Inclui padding na largura */
+}
+
+/* Estilo para as seções de card (Currículo e Projetos) */
+/* Ajuste para centralizar e justificar corretamente o conteúdo principal */
+.content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Espaçamento interno das laterais */
+    text-align: justify; /* Justificação do texto */
+}
+
+/* Ajuste específico para os títulos principais das seções */
+.section h2 {
+    color: #ff4d4d;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+/* Ajuste adicional para títulos menores  h4) */
+.section.card h4 {
+    text-align: left;
+    font-size: 1.4rem;
+    color: #e0e0e0;
+}
+/* Ajuste adicional para títulos menores (h3) */
+.section.card h3 {
+    text-align: left;
+    color: #e0e0e0;
+}
+
+.section.card ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.section.card li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Projetos - título */
+article {
+    margin-bottom: 3rem; /* aumenta o espaçamento entre os projetos */
+
+  }
+
+  article h3 {
+    font-size: 2rem; /* ou 2rem, depende do seu gosto */
+    color: #e0e0e0; /* mantém a cor clara do tema escuro */
+    margin-bottom: 2rem; /* para separar o título do conteúdo */
+    font-weight: 600;
+  }
+  
+  
+/* Seção de Certificados */
+.certificados-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: #e0e0e0;
+    text-align: left;
+}
+
+.certificado-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.certificado-item h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #e0e0e0;
+}
+
+/* Botão para visualizar certificados */
+button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e63939;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    border: none;
+    background: transparent;
+    object-fit: contain;
+  }
+  
+  iframe.modal-content {
+    width: 90vw;
+    height: 90vh;
+  }
+  
+  img.modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    height: auto;
+    width: auto;
+  }
+  
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .close:hover {
+    color: #ff4d4d;
+  }
+  
+  .sidebar-menu {
+    transition: opacity 0.3s ease;
+  }
+  
+  .sidebar-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+  
+  
+/* Estilo para os ícones sociais na seção de Contato */
+.social-icons {
+    display: flex;
+    gap: 2rem; /* Ajuste o espaço entre os ícones */
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    margin-top: 1.5rem;
+}
+
+.social-icons img {
+    width: 95px; /* Aumenta o tamanho dos ícones */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1; /* Isso empurra o footer para o final */
+    margin-left: 220px;
+    padding: 20px;
+    z-index: 1;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+footer {
+    background-color: #0d0d0d; /* Cor uniforme com o resto da página */
+    color: #e0e0e0;
+    text-align: center;
+    padding: 1rem 0; /* Reduz o padding para diminuir a altura */
+    font-size: 0.9rem;
+    width: 100%;
+    border-top: 1px solid #2c2c2c; /* Linha superior para separação */
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-weight: 300; /* Fonte mais leve para aparência mais sutil */
+}
+
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Sidebar fica oculta */
+    .sidebar-menu {
+        display: none;
+    }
+
+    /* Ajuste o conteúdo principal */
+    .main-content {
+        margin-left: 0;
+        padding: 10px; /* Adiciona mais padding em telas pequenas */
+    }
+
+    /* O conteúdo principal fica com maior largura */
+    .content-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Ajuste a largura dos ícones de tecnologia */
+    .tech-icons img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ajuste das colunas em habilidades e outras seções */
+    #habilidades .content {
+        flex-direction: column;
+    }
+    
+    .foto {
+        width: 100px;
+        height: 100px;
+        margin-right: 1rem;
+    }
+
+    .section-title, .section h2 {
+        font-size: 1.8rem; /* Diminui o tamanho dos títulos em telas menores */
+    }
+}
+@media (max-width: 768px) {
+    /* Ajusta o layout da seção "Sobre Mim" */
+    #sobre-mim .content {
+        flex-direction: column; /* Coloca a foto acima do texto */
+        align-items: center; /* Centraliza o conteúdo */
+        gap: 1rem; /* Ajusta o espaçamento entre a foto e o texto */
+    }
+
+    /* Ajusta o tamanho da foto no celular */
+    .foto {
+        width: 120px; /* Reduz o tamanho da foto */
+        height: 120px;
+        margin-right: 0; /* Remove o espaço extra à direita */
+    }
+
+    /* Ajuste no título da seção para celular */
+    #sobre-mim h2 {
+        font-size: 2rem; /* Reduz o tamanho do título */
+    }
+
+    /* Ajuste no texto da seção para celular */
+    #sobre-mim .content-container {
+        padding: 0 1rem; /* Ajusta o padding para celulares */
+    }
+}
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .sidebar-menu {
+        display: none; /* Esconde a sidebar em telas menores */
+    }
+
+    .main-content {
+        margin-left: 0; /* Retira a margem quando a sidebar não estiver visível */
+    }
+}
+@media (max-width: 768px) {
+    .section.destaque {
+        padding: 1rem; /* Reduz o padding em telas pequenas */
+        width: 100%; /* Garante que a seção ocupe toda a largura disponível */
+        max-width: 100%; /* Remove a largura máxima para telas pequenas */
+    }
+}
+
+/* Ajuste para quando aumentar o zoom */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 10px; /* Adiciona um padding para evitar o sobrecarregamento do conteúdo */
+    }
+}
+/* Outras melhorias de responsividade, como imagens */
+.tech-icons-inline img {
+    width: calc(100% / 13 - 5px); /* Ajusta a largura para ficar bem distribuída */
+    height: auto;
+}
